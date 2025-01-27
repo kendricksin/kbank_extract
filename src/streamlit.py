@@ -99,7 +99,7 @@ def main():
     
     st.title("🏦 KBank Statement Parser")
     st.subheader("How to use:")
-    st.write("1) Download your KBank statement as a PDF.")
+    st.write("1) Download your KBank statement as a PDF. Note: Must be Thai language statement!")
     st.write("2) Print the PDF to remove any password protection.")
     st.write("3) Upload the PDF here to extract transaction data.")
     st.warning("Please check the output carefully, not all statements are the same.", icon="🚨")
