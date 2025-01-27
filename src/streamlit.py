@@ -92,13 +92,17 @@ def get_excel_download_link(df: pd.DataFrame) -> bytes:
 
 def main():
     st.set_page_config(
-        page_title="Bank Statement Parser",
+        page_title="KBank Statement Parser",
         page_icon="🏦",
         layout="wide"
     )
     
-    st.title("🏦 Bank Statement Parser")
-    st.write("Upload a bank statement PDF to convert it to a searchable table.")
+    st.title("🏦 KBank Statement Parser")
+    st.subheader("How to use:")
+    st.write("1) Download your KBank statement as a PDF.")
+    st.write("2) Print the PDF to remove any password protection.")
+    st.write("3) Upload the PDF here to extract transaction data.")
+    st.warning("Please check the output carefully, not all statements are the same.", icon="🚨")
     
     uploaded_file = st.file_uploader("Choose a PDF file", type="pdf")
     
@@ -130,6 +134,7 @@ def main():
             
             # Display table
             st.subheader("Transaction Data")
+            st.write("Displaying first 5000 rows.")
             
             # Add search functionality
             search = st.text_input("🔍 Search transactions", "")
